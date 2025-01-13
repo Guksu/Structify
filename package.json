@@ -13,10 +13,12 @@
     "update-major": "npm version major && git push origin main && git push origin --tags"
   },
   "dependencies": {
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "@vercel/analytics": "^1.4.1",
     "next": "15.1.4",
-    "@vercel/analytics": "^1.4.1"
+    "react": "^19.0.0",
+    "react-datepicker": "^7.6.0",
+    "react-dom": "^19.0.0",
+    "zustand": "^5.0.3"
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
