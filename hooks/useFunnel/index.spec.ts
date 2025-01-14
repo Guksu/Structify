@@ -11,7 +11,7 @@ vi.mock("next/navigation", () => ({
 
 describe("useFunnel Test", () => {
   describe("moveBack Test", () => {
-    test("pdfFunnel => backFunnel", () => {
+    test("pdfFunnel => techstackFunnel", () => {
       const push = vi.fn();
       (useRouter as Mock).mockReturnValue({ push });
       (usePathname as Mock).mockReturnValue(pages.pdfFunnel);
@@ -21,26 +21,13 @@ describe("useFunnel Test", () => {
         result.current.moveBack();
       });
 
-      expect(push).toHaveBeenCalledWith(pages.backFunnel);
+      expect(push).toHaveBeenCalledWith(pages.techstackFunnel);
     });
 
-    test("backFunnel => frontFunnel", () => {
+    test("techstackFunnel => infoFunnel", () => {
       const push = vi.fn();
       (useRouter as Mock).mockReturnValue({ push });
-      (usePathname as Mock).mockReturnValue(pages.backFunnel);
-
-      const { result } = renderHook(() => useFunnel());
-      act(() => {
-        result.current.moveBack();
-      });
-
-      expect(push).toHaveBeenCalledWith(pages.frontFunnel);
-    });
-
-    test("frontFunnel => infoFunnel", () => {
-      const push = vi.fn();
-      (useRouter as Mock).mockReturnValue({ push });
-      (usePathname as Mock).mockReturnValue(pages.frontFunnel);
+      (usePathname as Mock).mockReturnValue(pages.techstackFunnel);
 
       const { result } = renderHook(() => useFunnel());
       act(() => {
@@ -52,7 +39,7 @@ describe("useFunnel Test", () => {
   });
 
   describe("moveNext Test", () => {
-    test("infoFunnel => frontFunnel", () => {
+    test("infoFunnel => techstackFunnel", () => {
       const push = vi.fn();
       (useRouter as Mock).mockReturnValue({ push });
       (usePathname as Mock).mockReturnValue(pages.infoFunnel);
@@ -62,26 +49,13 @@ describe("useFunnel Test", () => {
         result.current.moveNext();
       });
 
-      expect(push).toHaveBeenCalledWith(pages.frontFunnel);
+      expect(push).toHaveBeenCalledWith(pages.techstackFunnel);
     });
 
-    test("frontFunnel => backFunnel", () => {
+    test("techstackFunnel => pdfFunnel", () => {
       const push = vi.fn();
       (useRouter as Mock).mockReturnValue({ push });
-      (usePathname as Mock).mockReturnValue(pages.frontFunnel);
-
-      const { result } = renderHook(() => useFunnel());
-      act(() => {
-        result.current.moveNext();
-      });
-
-      expect(push).toHaveBeenCalledWith(pages.backFunnel);
-    });
-
-    test("backFunnel => pdfFunnel", () => {
-      const push = vi.fn();
-      (useRouter as Mock).mockReturnValue({ push });
-      (usePathname as Mock).mockReturnValue(pages.backFunnel);
+      (usePathname as Mock).mockReturnValue(pages.techstackFunnel);
 
       const { result } = renderHook(() => useFunnel());
       act(() => {

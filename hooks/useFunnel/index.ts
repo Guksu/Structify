@@ -8,12 +8,9 @@ export default function useFunnel() {
   const moveNext = () => {
     switch (pathname) {
       case pages.infoFunnel:
-        router.push(pages.frontFunnel);
+        router.push(pages.techstackFunnel);
         break;
-      case pages.frontFunnel:
-        router.push(pages.backFunnel);
-        break;
-      case pages.backFunnel:
+      case pages.techstackFunnel:
         router.push(pages.pdfFunnel);
         break;
       default:
@@ -24,12 +21,9 @@ export default function useFunnel() {
   const moveBack = () => {
     switch (pathname) {
       case pages.pdfFunnel:
-        router.push(pages.backFunnel);
+        router.push(pages.techstackFunnel);
         break;
-      case pages.backFunnel:
-        router.push(pages.frontFunnel);
-        break;
-      case pages.frontFunnel:
+      case pages.techstackFunnel:
         router.push(pages.infoFunnel);
         break;
       default:

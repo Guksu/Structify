@@ -9,10 +9,10 @@ describe("infoStore Actions Test", () => {
     infoStore.getState().setTo(MOCK_DATE);
   });
 
-  test("title 연속된 공백 제거", () => {
-    infoStore.getState().setTitle("Test  Title");
-    expect(infoStore.getState().title).toBe("Test Title");
-  });
+  // test("title 연속된 공백 제거", () => {
+  //   infoStore.getState().setTitle("Test  Title");
+  //   expect(infoStore.getState().title).toBe("Test Title");
+  // });
 
   test("from 날짜 입력", () => {
     const fromDate = new Date("2022-12-01");
@@ -42,8 +42,8 @@ describe("infoStore Actions Test", () => {
     expect(infoStore.getState().to).toBe(fromDate);
   });
 
-  test("desc의 연속된 공백 제거", () => {
-    infoStore.getState().setDescription("Test  Description");
-    expect(infoStore.getState().description).toBe("Test Description");
-  });
+  // test("desc의 연속된 공백 제거", () => {
+  //   infoStore.getState().setDescription("Test  Description");
+  //   expect(infoStore.getState().description).toBe("Test Description");
+  // });
 });

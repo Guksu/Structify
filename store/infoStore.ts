@@ -1,4 +1,3 @@
-import { removeChainSpace } from "@/utils/removeSpace";
 import { create } from "zustand";
 
 type State = {
@@ -23,7 +22,7 @@ const infoStore = create<State & Actions>((set) => ({
   description: "",
   setTitle: (title: string) =>
     set({
-      title: removeChainSpace(title),
+      title,
     }),
   setFrom: (from: Date) => {
     if (from > infoStore.getState().to) {
@@ -39,8 +38,7 @@ const infoStore = create<State & Actions>((set) => ({
       return set({ to });
     }
   },
-  setDescription: (description: string) =>
-    set({ description: removeChainSpace(description) }),
+  setDescription: (description: string) => set({ description }),
   reset: () =>
     set({
       title: "",
