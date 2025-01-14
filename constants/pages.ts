@@ -1,6 +1,5 @@
 export const pages = {
   infoFunnel: "/funnel/info",
-  frontFunnel: "/funnel/front",
-  backFunnel: "/funnel/back",
+  techstackFunnel: "/funnel/techstack",
   pdfFunnel: "/funnel/pdf",
 };
